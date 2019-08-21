@@ -17,8 +17,10 @@ public class ConexaoDAO {
 
     public static void fecharConexao() throws Exception {
         try {
-
-            connSistema.close();
+    if(connSistema != null){
+        connSistema.close();
+    }
+            
         } catch (Exception erro) {
             throw new Exception(erro.getMessage());
         }
